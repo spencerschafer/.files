@@ -6,7 +6,7 @@
 /*   By: hstander <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/18 11:07:51 by hstander          #+#    #+#             */
-/*   Updated: 2017/08/28 17:22:37 by hstander         ###   ########.fr       */
+/*   Updated: 2017/09/18 16:17:55 by sschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 
 void	ft_readfile(t_args *ag)
 {
-	while (get_next_line(ag->fd, &ag->line) > 0)
+	while (get_next_line(ag->fd, &ag->line) > 0) // see folder 'libft/'
 	{
-		ag->line_no++;
-		parse_line(ag);
+		ag->line_no++; // see 'asm.h'
+		parse_line(ag); // see function below
 		if (ag->line)
 		{
 			free(ag->line);
@@ -48,20 +48,20 @@ void	parse_line(t_args *ag)
 {
 	int		i;
 
-	ag->trim_str = ft_strtrim(ag->line);
-	if ((i = ft_chr_i(ag->trim_str, '#')) > -1)
-		ag->trim_str = ft_substr(ag->trim_str, i);
+	ag->trim_str = ft_strtrim(ag->line); // see asm.h && folder 'libft/'
+	if ((i = ft_chr_i(ag->trim_str, '#')) > -1) // see 'extras.c'
+		ag->trim_str = ft_substr(ag->trim_str, i); // see 'extras2.c'
 	else if ((i = ft_chr_i(ag->trim_str, ';')) > -1)
-		ag->trim_str = ft_substr(ag->trim_str, i);
+		ag->trim_str = ft_substr(ag->trim_str, i); // see 'extras2.c'
 	if (ag->trim_str[0] == '.')
-		ft_nm_com(ag);
+		ft_nm_com(ag); // see 'name_comment.c"
 	else if (ag->trim_str[0])
-		ft_lbl_com(ag);
+		ft_lbl_com(ag); // see 'list.c'
 	else
 	{
 		free(ag->trim_str);
 		return ;
 	}
-	ft_setlist(ag);
+	ft_setlist(ag); // see 'list.c'
 	free(ag->trim_str);
 }

@@ -6,7 +6,7 @@
 /*   By: gvan-roo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 10:21:51 by gvan-roo          #+#    #+#             */
-/*   Updated: 2017/09/18 15:40:42 by sschafer         ###   ########.fr       */
+/*   Updated: 2017/09/18 16:23:13 by sschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,20 +63,20 @@ int			main(int argc, char **argv)
 	t_args	ag;
 	t_prog	*lst;
 
-	ft_bzero(&ag, sizeof(t_args)); // sets contents of file to '/0'.
-	ag.header = (t_header *)ft_memalloc(sizeof(t_header)); // allocating memory to hold a t_header - see 'op.h' for info.
-	ag.fd = check_arguments(&ag, argc, argv); // determines whether arguemnts entered are valid - see 'check.c' for info.
-	ft_readfile(&ag);
-	check_nm_com(&ag);
-	ag.fd = open(ag.file_name, O_WRONLY | O_TRUNC | O_CREAT, 0666);
-	ft_init(&ag);
-	lst = ag.head;
-	ag.header->prog_size = label_offset(lst, &ag);
-	ft_writename(&ag);
-	ft_list_iter(&ag);
+	ft_bzero(&ag, sizeof(t_args)); // sets contents of file to '/0' - see folder 'libft/'
+	ag.header = (t_header *)ft_memalloc(sizeof(t_header)); // allocating memory to hold a t_header - see 'op.h'
+	ag.fd = check_arguments(&ag, argc, argv); // determines whether arguemnts entered are valid - see 'check.c'
+	ft_readfile(&ag); // see 'parse_line.c'
+	check_nm_com(&ag); // see 'name_comment.c"
+	ag.fd = open(ag.file_name, O_WRONLY | O_TRUNC | O_CREAT, 0666); // see '<fcntl.h>'
+	ft_init(&ag); // see 'init.c'
+	lst = ag.head; // see 'asm.h'
+	ag.header->prog_size = label_offset(lst, &ag); // see 'label_offset.c'
+	ft_writename(&ag); // see function above
+	ft_list_iter(&ag); // see function above
 	ft_printf("Name        : %s\n", ag.header->prog_name);
 	ft_printf("Comment     : %s\n", ag.header->comment);
-	ft_free_all(&ag);
+	ft_free_all(&ag); // see 'free.c'
 	close(ag.fd);
 	return (0);
-}
+}
