@@ -6,7 +6,7 @@
 /*   By: gvan-roo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/13 10:21:51 by gvan-roo          #+#    #+#             */
-/*   Updated: 2017/09/14 12:50:41 by hstander         ###   ########.fr       */
+/*   Updated: 2017/09/18 15:40:42 by sschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ int			main(int argc, char **argv)
 	t_args	ag;
 	t_prog	*lst;
 
-	ft_bzero(&ag, sizeof(t_args));
-	ag.header = (t_header *)ft_memalloc(sizeof(t_header));
-	ag.fd = check_arguments(&ag, argc, argv);
+	ft_bzero(&ag, sizeof(t_args)); // sets contents of file to '/0'.
+	ag.header = (t_header *)ft_memalloc(sizeof(t_header)); // allocating memory to hold a t_header - see 'op.h' for info.
+	ag.fd = check_arguments(&ag, argc, argv); // determines whether arguemnts entered are valid - see 'check.c' for info.
 	ft_readfile(&ag);
 	check_nm_com(&ag);
 	ag.fd = open(ag.file_name, O_WRONLY | O_TRUNC | O_CREAT, 0666);

@@ -1,5 +1,6 @@
 export PS1="%F{green}%~%f>"
 export b="$HOME/.bitbucket/"
+export c="$HOME/.bitbucket/temp/corewar"
 alias comp="gcc -Wall -Werror -Wextra"
 alias val="valgrind --leak-check=full"
 alias norm="norminette"
