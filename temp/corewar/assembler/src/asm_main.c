@@ -79,4 +79,4 @@ int			main(int argc, char **argv)
 	ft_free_all(&ag); // see 'free.c'
 	close(ag.fd);
 	return (0);
-}
+}
