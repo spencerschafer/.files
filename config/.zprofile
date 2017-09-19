@@ -11,5 +11,8 @@ alias gs="git status"
 alias gc="git commit -m"
 alias gp="git push"
 
+# Loads Homebrew version until Sierra used - Note this is a temporary work around
+export PATH=/usr/local/bin:$PATH
+
 # Load Homebrew Fix script
 source $HOME/.brew_fix.zsh

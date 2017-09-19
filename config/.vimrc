@@ -5,7 +5,7 @@ set tabstop=4
 set shiftwidth=4
 set cc=80
 syntax on
-let loaded_matchparen = 1
+"let loaded_matchparen = 1
 filetype plugin indent on
 colorscheme monokai
 
