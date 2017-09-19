@@ -55,6 +55,7 @@ void	parse_line(t_args *ag)
 	**ft_chr_i searches a string for a char and returns its index if present
 	**otherwise it returns -1.
 	**ft_substr frees old str and mallocs new string, from start to index.
+	**Note: '#' && ';' are considered comments
 	*/
 	if ((i = ft_chr_i(ag->trim_str, '#')) > -1) // see 'extras.c'
 		ag->trim_str = ft_substr(ag->trim_str, i); // see 'extras2.c'
