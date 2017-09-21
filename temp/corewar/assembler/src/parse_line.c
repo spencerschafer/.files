@@ -48,18 +48,32 @@ void	parse_line(t_args *ag)
 {
 	int		i;
 
-	// removes white space from either side of the string
-	ag->trim_str = ft_strtrim(ag->line); // see asm.h && folder 'libft/'
-
-	/*	
-	**ft_chr_i searches a string for a char and returns its index if present
-	**otherwise it returns -1.
-	**ft_substr frees old str and mallocs new string, from start to index.
+	/*
+	** ft_strtrim removes white space from either side of the string
 	*/
+	ag->trim_str = ft_strtrim(ag->line); // see asm.h && folder 'libft/'
+	
+	/*
+	** Note:	
+	** ft_chr_i finds the last occurence of the char passed to the function
+	** and returns the index (stored in i), otherwise returns -1.
+	**
+	** Note:	
+	** ft_substr frees old str and mallocs new string, from start to index.
+	**
+	** Note:	
+	** Comments in the source file begin with a '#' or ';'.
+	** These comments are not part of the program, but for another human to
+	** read,which are irrelevant to the actual program itself.
+	** Also, these comments are different to .name nad .comment.
+	** Therefore, need to be excluded.
+	*/
+
 	if ((i = ft_chr_i(ag->trim_str, '#')) > -1) // see 'extras.c'
 		ag->trim_str = ft_substr(ag->trim_str, i); // see 'extras2.c'
 	else if ((i = ft_chr_i(ag->trim_str, ';')) > -1)
 		ag->trim_str = ft_substr(ag->trim_str, i); // see 'extras2.c'
+
 	/*
 	**
 	*/

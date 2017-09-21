@@ -86,14 +86,22 @@ int		ft_exit_nmcm(t_args *ag, int i)
 }
 
 /*
-** if a line starts with a '.' it checks if the line is the program name or the
-** program comments, and calls the relevant function to save the name or
+** If a line starts with a '.' it checks if the line is the program 'name' or
+** the program comments, and calls the relevant function to save the name or
 ** comment into the header struct.
 */
 
 void	ft_nm_com(t_args *ag)
 {
 	int		i;
+
+	/*
+	** Note: First if statement.
+	** Compares the first 5 characters, counting from 0, to see if they match
+	** the string '.name'. If they do, call function ft_name (see above),
+	** otherwise it calls the exit function which calls the ft_exit_nmcm (see
+	** above).
+	*/
 
 	if (ft_strncmp(ag->trim_str, ".name", 5) == 0)
 	{
