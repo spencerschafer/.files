@@ -52,6 +52,7 @@ void	parse_line(t_args *ag)
 	** ft_strtrim removes white space from either side of the string
 	*/
 	ag->trim_str = ft_strtrim(ag->line); // see asm.h && folder 'libft/'
+<<<<<<< HEAD
 	
 	/*
 	** Note:	
@@ -67,6 +68,14 @@ void	parse_line(t_args *ag)
 	** read,which are irrelevant to the actual program itself.
 	** Also, these comments are different to .name nad .comment.
 	** Therefore, need to be excluded.
+=======
+
+	/*	
+	**ft_chr_i searches a string for a char and returns its index if present
+	**otherwise it returns -1.
+	**ft_substr frees old str and mallocs new string, from start to index.
+	**Note: '#' && ';' are considered comments
+>>>>>>> 80ca5d68fb388ec033f26989896ed327dba7bfa3
 	*/
 
 	if ((i = ft_chr_i(ag->trim_str, '#')) > -1) // see 'extras.c'
