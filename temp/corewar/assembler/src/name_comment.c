@@ -96,11 +96,18 @@ void	ft_nm_com(t_args *ag)
 	int		i;
 
 	/*
-	** Note: First if statement.
+	** Note: if-statements.
 	** Compares the first 5 characters, counting from 0, to see if they match
 	** the string '.name'. If they do, call function ft_name (see above),
 	** otherwise it calls the exit function which calls the ft_exit_nmcm (see
-	** above).
+	** above). Subsequent if-statements check for '.comment' and calls the
+	** ft_comment function.
+	**
+	** Note: ft_name
+	** 
+	** Note: ft_exit_nmcm 
+	** Prints an error message to the standout output depending on the exit
+	** code given. i.e -1, -2, or -3.
 	*/
 
 	if (ft_strncmp(ag->trim_str, ".name", 5) == 0)
