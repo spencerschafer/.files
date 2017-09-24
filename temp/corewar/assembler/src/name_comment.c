@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "../headers/asm.h"
-
+#include <stdio.h>
 /*
 ** saves the name of the program to the header struct if it passes all the
 ** tests.
@@ -25,7 +25,7 @@ void	ft_name(t_args *ag, int i)
 	if ((j = ft_chrn_i(ag->trim_str, '"')) > i)
 	{
 		if (ag->trim_str[j + 1] != '\0')
-			my_error(8, ag);
+			my_error(8, ag); // see 'error.c'
 		temp = ft_strsub(ag->trim_str, (i + 1), (j - i - 1));
 		if (ft_strlen(temp) > PROG_NAME_LENGTH)
 		{
@@ -38,7 +38,8 @@ void	ft_name(t_args *ag, int i)
 		free(temp);
 	}
 	else
-		my_error(5, ag);
+		my_error(5, ag); // see 'error.c'
+
 }
 
 /*
@@ -54,7 +55,7 @@ void	ft_comment(t_args *ag, int i)
 	if ((j = ft_chrn_i(ag->trim_str, '"')) > i)
 	{
 		if (ag->trim_str[j + 1] != '\0')
-			my_error(8, ag);
+			my_error(8, ag); // see 'error.c'
 		temp = ft_strsub(ag->trim_str, (i + 1), (j - i - 1));
 		if (ft_strlen(temp) > COMMENT_LENGTH)
 		{
@@ -67,7 +68,7 @@ void	ft_comment(t_args *ag, int i)
 		free(temp);
 	}
 	else
-		my_error(5, ag);
+		my_error(5, ag); // see 'error.c'
 }
 
 /*
@@ -102,6 +103,9 @@ void	ft_nm_com(t_args *ag)
 	** otherwise it calls the exit function which calls the ft_exit_nmcm (see
 	** above). Subsequent if-statements check for '.comment' and calls the
 	** ft_comment function.
+	** 
+	** Note: ft_chr_i (ft_chrn_i finds last occurence)
+	** Finds the first occurence of the input character, otherwise returns -1.
 	**
 	** Note: ft_name
 	** 
@@ -114,6 +118,7 @@ void	ft_nm_com(t_args *ag)
 	{
 		if ((i = ft_chr_i(ag->trim_str, '"')) > -1)
 			ft_name(ag, i);
+		}
 		else
 			exit(ft_exit_nmcm(ag, -1));
 	}
