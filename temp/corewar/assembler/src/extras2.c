@@ -34,6 +34,14 @@ char		*ft_join(char *str, int begin, int len)
 	return (sub);
 }
 
+/*
+**ft_strsub creates a substring from the string passed to it, starting from
+**the first passed integer to the function, until it reaches the
+**second integer passed into the function.
+**ft_substr takes the string passed into the function and does the same thing
+**as ft_strsub, however, it creates a new substring, mallocs this string, frees
+**the old string, and returns a pointer to the new substring created.
+*/
 char		*ft_substr(char *str, int len)
 {
 	char	*sub;
