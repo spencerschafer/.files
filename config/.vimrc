@@ -5,6 +5,7 @@ set ruler
 set tabstop=4
 set shiftwidth=4
 set cc=80
+set mouse=a
 syntax on
 filetype plugin indent on
 colorscheme monokai
