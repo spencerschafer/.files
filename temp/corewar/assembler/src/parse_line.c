@@ -75,8 +75,16 @@ void	parse_line(t_args *ag)
 		ag->trim_str = ft_substr(ag->trim_str, i); // see 'extras2.c'
 
 	/*
-	**
+	** ft_nm_com checks validity and stores '.name' and '.comment' strings in 
+	** their necessary locations to be used later.
+	** i.e. 
+	** .name "whitewalker"  
+	** .comment "winter is coming" 
+	** ft_name() determines that '.name' needs to store "whitewalker" (without
+	** quotations) in the necessary location for name, and "winter is coming
+	** (without quotiations) for .comment.
 	*/
+
 	if (ag->trim_str[0] == '.')
 		ft_nm_com(ag); // see 'name_comment.c"
 	else if (ag->trim_str[0])

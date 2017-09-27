@@ -30,15 +30,15 @@ void	ft_lbl_com(t_args *ag)
 					ag->trim_str[i + 1] == '\t' || ag->trim_str[i + 1] == '\0'))
 		{
 			sub = ft_strsub(ag->trim_str, 0, (i));
-			ft_check_lbl(sub, ag);
+			ft_check_lbl(sub, ag); // check 'extras2.c'
 			free(sub);
-			ft_lbl(ag, i);
+			ft_lbl(ag, i); // see below
 		}
 		else
-			ft_com(ag);
+			ft_com(ag); // see below
 	}
 	else
-		ft_com(ag);
+		ft_com(ag); // see below
 }
 
 /*
