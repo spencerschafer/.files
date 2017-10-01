@@ -1,3 +1,3 @@
-# Current projects.
+# Current project.
 
 Contains config file and current project.
