@@ -1,7 +1,7 @@
 # Shortcuts
 export PS1="%F{green}%~%f>"
-export b="$HOME/.bitbucket/"
-export c="$HOME/.bitbucket/temp/corewar"
+export g="$HOME/.github/"
+export c="$HOME/.github/current/corewar"
 
 # Compilation
 alias comp="gcc -Wall -Werror -Wextra"
