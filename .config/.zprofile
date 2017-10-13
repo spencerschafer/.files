@@ -1,7 +1,7 @@
 # Shortcuts
 export PS1="%F{green}%~%f>"
 export g="$HOME/.github/"
-export c="$HOME/.github/current/corewar"
+export e="$HOME/.github/expert-system/"
 
 # Compilation
 alias comp="gcc -Wall -Werror -Wextra"
@@ -24,8 +24,8 @@ alias gsc="git status --column"
 alias gc="git commit -m"
 alias gp="git push"
 
-# Loads Homebrew version until Sierra used - Note this is a temporary work around
-#export PATH=/usr/local/bin:$PATH
+# Loads Homebrew file versions - For school use.
+export PATH=/usr/local/bin:$PATH
 
 # Load Homebrew Fix script
-#source $HOME/.brew_fix.zsh
+source $HOME/.brew_fix.zsh
