@@ -13,4 +13,4 @@ N => M
 ?AFKP
 
 # With = DEIJOP , AFKP is true.
-# With = DEIJOP , AFP is true, K is false.
+# With = DEIJP  , AFP is true, K is false.

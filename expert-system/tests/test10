@@ -18,3 +18,42 @@ A + B       <=> !C      # A and B if and only if not C
 						# If no facts are initially true, then a simple "=" followed by a newline is used
 
 ?GVX                    # Queries : What are G, V and X ?
+
+#-------------------------------------------------------------
+# C           => E        # C implies E
+# 1           => 1
+
+# A + B + C   => D        # A and B and C implies D
+# 1 + 1 + 1   => 1
+
+# A | B       => C        # A or B implies C
+# 1 | 1       => 1
+
+# A + !B      => F        # A and not B implies F
+# 1 + !1      => 0
+
+# C | !G      => H        # C or not G implies H
+# 0 | !1      => 0
+
+# V ^ W       => X        # V xor W implies X
+# 0 ^ 0       => 0
+
+# A + B       => Y + Z    # A and B implies Y and Z
+# 1 + 1       => 1 + 1
+
+# C | D       => X | V    # C or D implies X or V
+# 1 | 0       => ? | 1
+
+# E + F       => !V       # E and F implies not V
+# 0 + 0       => !1
+
+# A + B       <=> C       # A and B if and only if C
+# 1 + 1       <=> 1
+
+# A + B       <=> !C      # A and B if and only if not C
+# 1 + 1       <=> !0
+
+# ABG = 1.
+# G   = 1.
+# V   = 1.
+# X   = ?.
