@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="ft_itoa_base:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/ft_itoa_base_jar</output-path>
-    <root id="archive" name="ft_itoa_base.jar">
-      <element id="module-output" name="ft_itoa_base" />
-    </root>
-  </artifact>
-</component>

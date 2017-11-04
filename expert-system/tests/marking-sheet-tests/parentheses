@@ -1,0 +1,28 @@
+A | B + C => E
+(F | G) + H => E
+
+#=
+#= A
+#= B
+#= C
+#= AC
+#= BC
+#= F
+#= G
+#= H
+#= FH
+#= GH
+
+?E
+
+# With =  	, E should be false.
+# With = A , E should be true.
+# With = B , E should be false.
+# With = C , E should be false.
+# With = AC, E should be false.
+# With = BC, E should be true.
+# With = F , E should be false.
+# With = G , E should be false.
+# With = H , E should be false.
+# With = FH, E should be true.
+# With = GH, E should be true.
