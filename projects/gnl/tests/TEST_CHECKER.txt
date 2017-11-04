@@ -1,0 +1,23 @@
+- -------- -
+| EXPECTED |         Note: 42 - Timer fail.  30 - Multiple FD.
+- -------- -
+[1]     - Failed 42 , 17.
+[2]     - Passed all.
+[4]     - Passed all.
+[100]   - Failed 30.
+[2048]  - Failed 30.
+[2056]  - Failed 30.
+[4096]  - Failed 30.
+[50000] - Failed 30.
+
+- ---- -
+|  ME  |
+- ---- -
+[1]     -
+[2]     -
+[4]     -
+[100]   -
+[2048]  -
+[2056]  -
+[4096]  -
+[50000] -
