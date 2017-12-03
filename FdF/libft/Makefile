@@ -24,14 +24,15 @@ SRCS =	ft_isprint.c ft_memset.c ft_strcat.c ft_striteri.c ft_strnequ.c \
 		ft_strncat.c ft_strsub.c ft_isascii.c ft_memdel.c ft_putstr.c \
 		ft_strequ.c ft_strncmp.c ft_strtrim.c ft_isdigit.c ft_memmove.c \
 		ft_putstr_fd.c ft_striter.c ft_strncpy.c ft_strtrim_char.c \
-		ft_countint.c ft_powerof_pos.c ft_wordlen.c ft_lstnew.c \
-		ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c
+		ft_countint.c ft_pow.c ft_wordlen.c ft_lstnew.c \
+		ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
+		ft_skipwhitespace.c get_next_line.c 
 OBJS = $(SRCS:.c=.o)
 INCL = -Iincludes
 
 all: $(NAME)
 
-$(NAME): 
+$(NAME):
 	$(COMP) $(FLAG) -c $(INCL) $(SRCS) 
 	ar rc $(NAME) $(OBJS)
 

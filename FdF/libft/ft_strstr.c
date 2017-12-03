@@ -25,7 +25,7 @@ char	*ft_strstr(const char *big, const char *little)
 	{
 		if (ft_strncmp(big + i, little, len_little) == 0)
 			return ((char *)big + i);
-		i++;
+		++i;
 	}
 	return (NULL);
 }

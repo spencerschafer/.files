@@ -18,15 +18,11 @@ void	*ft_memalloc(size_t size)
 	char	*str;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (size));
-	if (str != NULL)
+	if ((str = (char *)malloc(sizeof(char) * (size))) == NULL)
+		return (NULL);
+	while (i < size)
 	{
-		while (i < size)
-		{
-			str[i] = 0;
-			i++;
-		}
-		return (str);
+		str[i++] = 0;
 	}
-	return (NULL);
+	return (str);
 }

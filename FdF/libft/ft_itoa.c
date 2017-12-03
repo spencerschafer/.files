@@ -35,11 +35,11 @@ char		*ft_itoa(int n)
 	{
 		newstr[j++] = '-';
 		n_cpy *= -1;
-		i--;
+		--i;
 	}
 	while (--i >= 0)
 	{
-		number = (n_cpy / (ft_powerof_pos(10, i))) % 10;
+		number = (n_cpy / (ft_pow(10, i))) % 10;
 		newstr[j++] = number + '0';
 	}
 	newstr[j] = '\0';

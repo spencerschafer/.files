@@ -23,11 +23,11 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (s[i] == c)
 			temp = i;
-		i++;
+		++i;
 	}
 	if (c == '\0')
 		return ((char *)(s + i));
-	else if (i > 0 && (s[temp] == c))
+	if (i > 0 && (s[temp] == c))
 		return ((char *)(s + temp));
 	return (NULL);
 }

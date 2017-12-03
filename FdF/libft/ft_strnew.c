@@ -18,15 +18,12 @@ char	*ft_strnew(size_t size)
 	char	*str;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (str != NULL)
+	if ((str = (char *)malloc(sizeof(char) * (size + 1))) == NULL)
+		return (NULL);
+	while (i <= size)
 	{
-		while (i <= size)
-		{
-			str[i] = '\0';
-			i++;
-		}
-		return (str);
+		str[i] = '\0';
+		++i;
 	}
-	return (NULL);
+	return (str);
 }

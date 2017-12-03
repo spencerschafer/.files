@@ -14,7 +14,7 @@
 
 int	ft_strequ(char const *s1, char const *s2)
 {
-	size_t value;
+	int	value;
 
 	if ((s1 == NULL) || (s2 == NULL))
 		return (0);

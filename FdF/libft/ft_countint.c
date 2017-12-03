@@ -29,8 +29,8 @@ size_t		ft_countint(int n)
 	number = n;
 	(n < 0) ? (number *= -1) : (number);
 	while ((mod *= 10) <= number)
-		i++;
+		++i;
 	if (n < 0)
-		i++;
+		++i;
 	return (i);
 }

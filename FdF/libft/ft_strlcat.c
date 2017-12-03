@@ -14,10 +14,10 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t i;
+	int i;
+	int buffer;
 	size_t src_len;
 	size_t dst_len;
-	size_t buffer;
 
 	i = 0;
 	src_len = ft_strlen((char *)src);
@@ -28,8 +28,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	while ((src[i] != '\0') && (buffer > 1))
 	{
 		dst[dst_len + i] = src[i];
-		i++;
-		buffer--;
+		++i;
+		--buffer;
 	}
 	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);

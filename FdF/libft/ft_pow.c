@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_topowerof.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sschafer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/02 16:01:27 by sschafer          #+#    #+#             */
-/*   Updated: 2017/06/18 15:28:21 by sschafer         ###   ########.fr       */
+/*   Created: 2017/06/26 07:34:10 by sschafer          #+#    #+#             */
+/*   Updated: 2017/06/26 09:15:00 by sschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_atoi(const char *str)
+int		ft_pow(int number, int power)
 {
-	int		sign;
-	long	total;
-	long	temp;
+	int		i;
+	int		num;
 
-	str = ft_skipwhitespace((char *)str);
-	total = 0;
-	temp = 0;
-	sign = (*str == '-') ? 1 : 0;
-	if ((*str == '-') || (*str == '+'))
-		str++;
-	while (*str >= '0' && *str <= '9')
-	{
-		temp = (total * 10) + (*str++ - '0');
-		if (temp / 10 != total)
-			return ((sign == 0) ? -1 : 0);
-		total = temp;
-	}
-	return ((sign) ? (-total) : (total));
+	if (power == 0)
+		return (number = 1);
+	i = 1;
+	num = number;
+	while (i++ < power)
+		num *=  number;
+	return (num);
 }

@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "libft.h"
-#include "get_next_line.h"
 
 static int		ft_createline(char *buff, char **line, char *endl)
 {

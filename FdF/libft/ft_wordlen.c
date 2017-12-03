@@ -20,11 +20,11 @@ int		ft_wordlen(char const *s, char delimiter)
 	i = 0;
 	count = 0;
 	while (s[i] == delimiter)
-		i++;
+		++i;
 	while ((s[i] != delimiter) && (s[i] != '\0'))
 	{
-		i++;
-		count++;
+		++i;
+		++count;
 	}
 	return (count);
 }

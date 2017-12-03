@@ -44,6 +44,7 @@ int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_countwords(char const *s, char delimiter);
 int					ft_wordlen(char const *s, char delimiter);
+int					ft_pow(int number, int power);
 
 /*
 **	size_t
@@ -52,7 +53,6 @@ int					ft_wordlen(char const *s, char delimiter);
 size_t				ft_strlen(const char *s);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_countint(int n);
-size_t				ft_powerof_pos(int n, int power);
 
 /*
 **	char *
@@ -77,6 +77,7 @@ char				*ft_strtrim(char const *s);
 char				*ft_strtrim_char(char const *s, char delimiter);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_itoa(int n);
+char				*ft_skipwhitespace(char *);
 char				**ft_strsplit(char const *s, char c);
 
 /*

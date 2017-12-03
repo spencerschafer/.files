@@ -30,11 +30,11 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putchar_fd(('-'), fd);
 		n_cpy *= -1;
-		i--;
+		--i;
 	}
 	while (--i >= 0)
 	{
-		number = (n_cpy / (ft_powerof_pos(10, i))) % 10;
+		number = (n_cpy / (ft_pow(10, i))) % 10;
 		ft_putchar_fd((number + '0'), fd);
 	}
 }

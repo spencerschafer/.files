@@ -27,12 +27,12 @@ int			ft_countwords(char const *s, char delimiter)
 	len = ft_strlen(newstr);
 	if (len == 0)
 		return (count);
-	count++;
+	++count;
 	while (newstr[i] != '\0')
 	{
 		if ((newstr[i] == delimiter) && (newstr[i - 1] != delimiter))
 			count++;
-		i++;
+		++i;
 	}
 	return (count);
 }
