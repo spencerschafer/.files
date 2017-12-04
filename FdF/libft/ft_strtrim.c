@@ -15,8 +15,8 @@
 char		*ft_strtrim(char const *s)
 {
 	int		i;
-	int 	j;
-	int 	counter;
+	int		j;
+	int		counter;
 	char	*newstr;
 
 	if (s == NULL)
