@@ -22,6 +22,6 @@ int		ft_pow(int number, int power)
 	i = 1;
 	num = number;
 	while (i++ < power)
-		num *=  number;
+		num *= number;
 	return (num);
 }
