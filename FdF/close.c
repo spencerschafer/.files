@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 /*
-** Function that closes program window upon 'esc' key being pressed.
-*/
+ ** Function that closes program window upon 'esc' key being pressed.
+ */
 
 int	close(int keycode)
 {
@@ -17,7 +17,6 @@ int main(void)
 {
 	void *mlx;
 	void *win;
-
 	int x;
 	int y;
 
