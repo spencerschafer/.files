@@ -6,7 +6,7 @@
 #    By: sschafer <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/05/30 15:01:03 by sschafer          #+#    #+#              #
-#    Updated: 2017/07/03 06:41:56 by sschafer         ###   ########.fr        #
+#    Updated: 2017/12/07 13:25:27 by sschafer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS =	ft_isprint.c ft_memset.c ft_strcat.c ft_striteri.c ft_strnequ.c \
 		ft_putstr_fd.c ft_striter.c ft_strncpy.c ft_strtrim_char.c \
 		ft_countint.c ft_pow.c ft_wordlen.c ft_lstnew.c \
 		ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
-		ft_skipwhitespace.c get_next_line.c 
+		ft_skipwhitespace.c ft_map.c get_next_line.c 
 OBJS = $(SRCS:.c=.o)
 INCL = -Iincludes
 

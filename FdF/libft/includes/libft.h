@@ -6,7 +6,7 @@
 /*   By: sschafer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 13:52:17 by sschafer          #+#    #+#             */
-/*   Updated: 2017/07/03 12:22:00 by sschafer         ###   ########.fr       */
+/*   Updated: 2017/12/07 13:26:14 by sschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_itoa(int n);
 char				*ft_skipwhitespace(char *);
 char				**ft_strsplit(char const *s, char c);
+char 				***ft_map(char ***src, char *str);
 
 /*
 **	void
