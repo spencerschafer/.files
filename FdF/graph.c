@@ -14,63 +14,65 @@
 #include "libft.h" //libft functions
 #include <fcntl.h>
 
-char ***vector(char ***origin, char *src)
+char ***vector(char ***src, char *str)
 {
 	int x;
 	int y;
-	char	**temp;
+	//char	**temp; 
+	char	**new_str;
 	char 	***graph;
 
-	if (origin != NULL)
+	y = 0;
+	if (src != NULL)
 	{
-		y = 0;
-		while (origin[y])
+		while (src[y])
 			++y;
-		graph = (char ***)malloc(sizeof(char **) * (y + 2));
+	}
+	graph = (char ***)malloc(sizeof(char **) * (y + 2));
 
+	if (y > 0)
+	{
 		//copying exisiting values
 		//iterating through y values
 		y = 0;
-		while (origin[y])
+		while (src[y])
 		{
 			//counting x values to be added
 			x = 0;
-			while (origin[y][x])
+			while (src[y][x])
 				++x;
 
-			//mallocing new array containing x values
+			//mallocing new array that will contain the current x values
 			graph[y] = (char **)malloc(sizeof(char *) * (x + 1));
 
 			//duplicating current values to new vector
 			x = 0;
-			while (origin[y][x])
+			while (src[y][x])
 			{
-				graph[y][x] = ft_strdup(origin[y][x]);
+				graph[y][x] = ft_strdup(src[y][x]);
 				++x;
 			}
 			graph[y][x] = NULL;
 			++y;
 		}
-		//adding new str to original vector
-		temp = ft_strsplit(src, ' ');
-		graph[y++] = temp;
+
+		//adding new str to srcal vector
+		new_str = ft_strsplit(str, ' ');
+		graph[y++] = new_str;
 		graph[y] = NULL;
 	}
 	else
 	{
-		y = 0;
-		graph = (char ***)malloc(sizeof(char **) * (y + 2));
-		x = 0;
-		graph[y++] = ft_strsplit(src, ' ');
+		graph[y++] = ft_strsplit(str, ' ');
 		graph[y] = NULL;
 	}
-	free(origin);
+	free(src);
 	return (graph);	
 }
 
 /*
- * [create new vector with size of original vector size + 1]
- * [copy exisiting values of original vector to new vector]
+ * [create new vector with size of src vector size + 1]
+ * [copy exisiting values of src vector to new vector]
  * [add new array to current vector]
  * [split array to add to vector]
  * [add null]
@@ -104,6 +106,7 @@ int				main(int argc, char **argv)
 			printf("]\n");
 			++y;
 		}
+		printf("[%s]\n", str[4][5]);
 		//printf("------\n");
 		//printf("[%s]\n", line);
 		//printf("[%i]\n", ret);
