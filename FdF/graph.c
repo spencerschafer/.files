@@ -106,7 +106,7 @@ int				main(int argc, char **argv)
 			printf("]\n");
 			++y;
 		}
-		printf("[%s]\n", str[4][5]);
+		//printf("[%s]\n", str[5][5]);
 		//printf("------\n");
 		//printf("[%s]\n", line);
 		//printf("[%i]\n", ret);
