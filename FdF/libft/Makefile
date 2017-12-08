@@ -26,7 +26,7 @@ SRCS =	ft_isprint.c ft_memset.c ft_strcat.c ft_striteri.c ft_strnequ.c \
 		ft_putstr_fd.c ft_striter.c ft_strncpy.c ft_strtrim_char.c \
 		ft_countint.c ft_pow.c ft_wordlen.c ft_lstnew.c \
 		ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
-		ft_skipwhitespace.c ft_map.c get_next_line.c 
+		ft_skipwhitespace.c get_next_line.c 
 OBJS = $(SRCS:.c=.o)
 INCL = -Iincludes
 

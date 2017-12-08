@@ -13,9 +13,9 @@
 #include <stdio.h> //printf()
 #include "libft.h" //libft functions
 #include "mlx.h"
+#include "fdf.h"
 #include <fcntl.h>
-
-
+#include <math.h>
 /*
  ** Function that closes program window upon 'esc' key being pressed.
  */
@@ -46,55 +46,57 @@ int				main(int argc, char **argv)
 {
 	if (argc == 2)
 	{
-		//x and y values
-		int			x;
-		int			y;
-		
-		//mlx values
-		void *mlx;
-		void *window;
-
-		//get_next_line values
-		int 		fd;
-		int			ret;
-
-		//map valuess
-		char 		*line;
+		int			win_x;
+		int			win_y;
+		void 		*mlx;
+		void 		*window;
 		char		***map = NULL;
 
-		//opening file
-		fd = open(argv[1], O_RDONLY);
-
-		//creating map of coordinates
-		while ((ret = get_next_line(fd, &line)) > 0)
-		{
-			map = ft_map(map, line);
-			free(line);
-		}
-		free(line);
+		map = ft_open(map, argv[1]);
 
 		//opening window
-		x = 0;
-		y = 0;
-		dimension(map, &x, &y);
-		printf("x: %d\ny: %d\n", x, y);
+		win_x = 0;
+		win_y = 0;
+		dimension(map, &win_x, &win_y);
+		printf("x: %d\ny: %d\n", win_x, win_y);
+		win_x *= 28;
+		win_y *= 14;
 		mlx = mlx_init();
 
-		/*
-			x = 150;
-			y = 150;
-			while (x < 250)
-			mlx_pixel_put(mlx, win, x++, y, 0x00FFFFFF);
-		*/
-		
-		window = mlx_new_window(mlx, x * 28, y * 14 + 11, "FdF");
+		window = mlx_new_window(mlx, win_x, win_y, "FdF");
+		//window = mlx_new_window(mlx, x * 28, y * 50, "FdF");
+
+		float x, y, x1, y1, x2, y2, dx, dy, step;
+		int i;
+
+		x1 = win_x / 2;
+		x2 = win_x / 2 + 200;
+		y1 = 10;
+		y2 = win_y / 2 + 200;
+		dx = x2 - x1;
+		dy = y2 - y1;
+
+		if(dx >= dy)
+			step = dx;
+		else
+			step = dy;
+
+		dx = dx / step;
+		dy = dy / step;
+
+		x = x1;
+		y = y1;
+
+		i = 1;
+		while( i<= step)
+		{
+			mlx_pixel_put(mlx, window, x, y, 0xFFFFFF);
+			//putpixel(x,y,5);
+			x += dx;
+			y += dy;
+			++i;
+		}
 		mlx_key_hook(window, close, 0); // exit program
-		
-		//y = 3  : y * 14 : highest value = 0 : total = 42
-		//y = 11 : y * 14 : highest value = 0 : total = 154
-		//y * 16
-		//(y + highest value) * 10
-		//
 		mlx_loop(mlx);
 	}
 	return (0);

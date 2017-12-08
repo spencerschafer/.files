@@ -20,7 +20,7 @@
 ** [add null]
 **/
 
-char ***ft_map(char ***src, char *str)
+char ***map(char ***src, char *str)
 {
 	int x;
 	int y;

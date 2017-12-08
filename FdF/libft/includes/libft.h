@@ -79,7 +79,6 @@ char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_itoa(int n);
 char				*ft_skipwhitespace(char *);
 char				**ft_strsplit(char const *s, char c);
-char 				***ft_map(char ***src, char *str);
 
 /*
 **	void
