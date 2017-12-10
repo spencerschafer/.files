@@ -11,10 +11,7 @@
 # **************************************************************************** #
 
 NAME =	libft.a
-INCL =	-I	../includes
-SRCS_DIR = cd srcs;
-OBJS_DIR = ../objs; 
-HOME_DIR = ../;
+INCL =	-I ../includes
 
 SRCS =	ft_isprint.c	ft_memset.c			ft_strcat.c		\
 		ft_striteri.c	ft_tolower.c		ft_itoa.c		\
@@ -42,23 +39,27 @@ SRCS =	ft_isprint.c	ft_memset.c			ft_strcat.c		\
 
 OBJS =	$(SRCS:c=o)
 
+GR = \033[0;32m # green
+LB = \033[1;34m # light blue
+NC  = \033[0m   # no Color
+
 all:	$(NAME)
 
 $(NAME):
-	@$(SRCS_DIR) $(CC) $(INCL) -c $(SRCS)
-	@$(SRCS_DIR) ar -rc $(NAME) $(OBJS)
-	@$(SRCS_DIR) ranlib $(NAME)
+	@cd srcs; $(CC) $(INCL) -c $(SRCS)
+	@cd srcs; ar -rc $(NAME) $(OBJS)
+	@cd srcs; ranlib $(NAME)
 	@mkdir -p objs
-	@$(SRCS_DIR) mv $(OBJS) $(OBJS_DIR)
-	@$(SRCS_DIR) mv $(NAME) $(HOME_DIR)
-	@echo Completed build.
+	@cd srcs; mv $(OBJS) ../objs
+	@cd srcs; mv $(NAME) ../
+	@echo "Completed $(GR)[Libft build]$(NC)"
 
 clean:
 	@rm -rf objs
-	@echo Completed clean.
+	@echo "Completed $(LB)[Libft clean]$(NC)"
 
 fclean: clean
 	@rm -rf $(NAME)
-	@echo Completed fclean.
+	@echo "Completed $(LB)[Libft fclean]$(NC)"
 
 re: fclean all
