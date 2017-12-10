@@ -3,7 +3,7 @@
 #include "libft.h"
 
 //get_next_line values
-char ***open(char ***map, char *argv)
+char ***read_file(char ***map, char *argv)
 {
 	int			ret;
 	int			fd;
@@ -16,7 +16,7 @@ char ***open(char ***map, char *argv)
 	//creating map of coordinates
 	while ((ret = get_next_line(fd, &line)) > 0)
 	{
-		map = ft_map(map, line);
+		map = create_matrix(map, line);
 		free(line);
 	}
 	free(line);

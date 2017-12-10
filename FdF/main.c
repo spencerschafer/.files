@@ -12,10 +12,11 @@
 
 #include <stdio.h> //printf()
 #include "libft.h" //libft functions
-#include "mlx.h"
 #include "fdf.h"
+#include <mlx.h>
 #include <fcntl.h>
 #include <math.h>
+
 /*
  ** Function that closes program window upon 'esc' key being pressed.
  */
@@ -27,16 +28,16 @@ int	close(int keycode)
 	return (0);
 }
 
-void	dimension(char ***map, int *x, int *y)
+void	dimension(char ***matrix, int *x, int *y)
 {
 	int x_c;
 	int y_c;
 
 	x_c = 0;
 	y_c = 0;
-	while (map[y_c][x_c])
+	while (matrix[y_c][x_c])
 		++x_c;
-	while (map[y_c])
+	while (matrix[y_c])
 		++y_c;
 	*x = x_c;
 	*y = y_c;
@@ -50,14 +51,14 @@ int				main(int argc, char **argv)
 		int			win_y;
 		void 		*mlx;
 		void 		*window;
-		char		***map = NULL;
+		char		***matrix = NULL;
 
-		map = ft_open(map, argv[1]);
+		matrix = read_file(matrix, argv[1]);
 
 		//opening window
 		win_x = 0;
 		win_y = 0;
-		dimension(map, &win_x, &win_y);
+		dimension(matrix, &win_x, &win_y);
 		printf("x: %d\ny: %d\n", win_x, win_y);
 		win_x *= 28;
 		win_y *= 14;

@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_skipwhitespace.c                                :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sschafer <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/02 21:14:27 by sschafer          #+#    #+#             */
-/*   Updated: 2017/06/18 21:15:34 by sschafer         ###   ########.fr       */
+/*   Created: 2017/06/02 16:01:27 by sschafer          #+#    #+#             */
+/*   Updated: 2017/12/10 15:28:21 by sschafer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_skipwhitespace(char *str)
+#include "libft.h"
+
+int	ft_atoi(const char *str)
 {
-	while ((*str == ' ') || (*str == '\t') || (*str == '\n')
-			|| (*str == '\v') || (*str == '\f') || (*str == '\r'))
+	int			sign;
+	long		total;
+	long		temp;
+
+	sign = 0;
+	total = 0;
+	str = ft_skipspace((char *)str);
+	if ((str[0] == '+') || (sign = (str[0] == '-')))
 		str++;
-	return (str);
+	while ((*str >= '0') && (*str <= '9'))
+	{
+		temp = (total * 10) + (*str++ - '0');
+		if (temp / 10 != total)
+			return (!sign ? -1 : 0);
+		total = temp;
+	}
+	return (sign ? (int)-total : (int)total);
 }

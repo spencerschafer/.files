@@ -1,8 +1,8 @@
 #ifndef FDF_H
 
 # define FDF_H
-
-char ***map(char ***src, char *str);
-char ***open(char ***src, char *argv);
+#include <mlx.h>
+char ***create_matrix(char ***src, char *str);
+char ***read_file(char ***src, char *argv);
 
 #endif

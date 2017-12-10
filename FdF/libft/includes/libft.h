@@ -23,7 +23,7 @@
 
 # define BUFF_SIZE 2
 
-int get_next_line(const int fd, char **line);
+int					ft_get_line(const int fd, char **line);
 
 /*
 **	int
@@ -77,7 +77,7 @@ char				*ft_strtrim(char const *s);
 char				*ft_strtrim_char(char const *s, char delimiter);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_itoa(int n);
-char				*ft_skipwhitespace(char *);
+char				*ft_skipspace(char *);
 char				**ft_strsplit(char const *s, char c);
 
 /*

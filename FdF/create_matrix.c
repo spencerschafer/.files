@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include "fdf.h"
 /*
 ** [create new vector with size of src vector size + 1]
 ** [copy exisiting values of src vector to new vector]
@@ -20,13 +20,13 @@
 ** [add null]
 **/
 
-char ***map(char ***src, char *str)
+char ***create_matrix(char ***src, char *str)
 {
 	int x;
 	int y;
 	//char	**temp; //to free memory
 	char	**new_str;
-	char 	***graph;
+	char 	***matrix;
 
 	y = 0;
 	if (src != NULL)
@@ -34,7 +34,7 @@ char ***map(char ***src, char *str)
 		while (src[y])
 			++y;
 	}
-	graph = (char ***)malloc(sizeof(char **) * (y + 2));
+	matrix = (char ***)malloc(sizeof(char **) * (y + 2));
 
 	if (y > 0)
 	{
@@ -49,29 +49,29 @@ char ***map(char ***src, char *str)
 				++x;
 
 			//mallocing new array that will contain the current x values
-			graph[y] = (char **)malloc(sizeof(char *) * (x + 1));
+			matrix[y] = (char **)malloc(sizeof(char *) * (x + 1));
 
 			//duplicating current values to new vector
 			x = 0;
 			while (src[y][x])
 			{
-				graph[y][x] = ft_strdup(src[y][x]);
+				matrix[y][x] = ft_strdup(src[y][x]);
 				++x;
 			}
-			graph[y][x] = NULL;
+			matrix[y][x] = NULL;
 			++y;
 		}
 
 		//adding new str to srcal vector
 		new_str = ft_strsplit(str, ' ');
-		graph[y++] = new_str;
-		graph[y] = NULL;
+		matrix[y++] = new_str;
+		matrix[y] = NULL;
 	}
 	else
 	{
-		graph[y++] = ft_strsplit(str, ' ');
-		graph[y] = NULL;
+		matrix[y++] = ft_strsplit(str, ' ');
+		matrix[y] = NULL;
 	}
 	free(src);
-	return (graph);
+	return (matrix);
 }

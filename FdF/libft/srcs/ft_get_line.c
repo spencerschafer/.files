@@ -69,7 +69,7 @@ static int		ft_read(const int fd, char *buff, char **line)
 	return (ret);
 }
 
-int				get_next_line(const int fd, char **line)
+int				ft_get_line(const int fd, char **line)
 {
 	static char	buff[BUFF_SIZE + 1];
 	char		*endl;
