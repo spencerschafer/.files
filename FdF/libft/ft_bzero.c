@@ -20,8 +20,5 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	chr = (char *)s;
 	while (i++ < n)
-	{
-		*chr = 0;
-		++chr;
-	}
+		*chr++ = 0;
 }
