@@ -39,9 +39,9 @@ SRCS =	ft_isprint.c	ft_memset.c			ft_strcat.c		\
 
 OBJS =	$(SRCS:c=o)
 
-GR = \033[0;32m # green
+GR = \033[1;32m # green
 LB = \033[1;34m # light blue
-NC  = \033[0m   # no Color
+NC = \033[0m   # no Color
 
 all:	$(NAME)
 
@@ -56,10 +56,7 @@ $(NAME):
 
 clean:
 	@rm -rf objs
+	@rm -rf $(NAME)
 	@echo "Completed $(LB)[Libft clean]$(NC)"
 
-fclean: clean
-	@rm -rf $(NAME)
-	@echo "Completed $(LB)[Libft fclean]$(NC)"
-
-re: fclean all
+re: clean all

@@ -28,6 +28,25 @@ int	close(int keycode)
 	return (0);
 }
 
+void	print_matrix(char ***matrix)
+{	
+        //printing matrix
+        int xx;
+        int yy;
+
+        yy = 0;
+        while (matrix[yy])
+        {
+            xx = 0;
+            printf("[");
+            while (matrix[yy][xx])
+            {
+                printf("[%s]", matrix[yy][xx++]);
+            }
+            printf("]\n");
+            ++yy;
+        }
+}
 void	dimension(char ***matrix, int *x, int *y)
 {
 	int x_c;
@@ -54,36 +73,21 @@ int				main(int argc, char **argv)
 		char		***matrix = NULL;
 
 		matrix = read_file(matrix, argv[1]);
-
-        //printing matrix
-        int xx;
-        int yy;
-
-        yy = 0;
-        while (matrix[yy])
-        {
-            xx = 0;
-            printf("[");
-            while (matrix[yy][xx])
-            {
-                printf("[%s]", matrix[yy][xx++]);
-            }
-            printf("]\n");
-            ++yy;
-        }
+		//print_matrix(matrix);
 
 		//opening window
 		win_x = 0;
 		win_y = 0;
 		dimension(matrix, &win_x, &win_y);
-		printf("x: %d\ny: %d\n", win_x, win_y);
+		printf("Max Width: %d\nMax Height: %d\n", win_x, win_y);
 		win_x *= 28;
 		win_y *= 14;
+
 		mlx = mlx_init();
-
 		window = mlx_new_window(mlx, 1250, 750, "FdF");
+		parse_matrix(mlx, window, matrix);
 		//window = mlx_new_window(mlx, x * 28, y * 50, "FdF");
-
+/*
 		float x, y, x1, y1, x2, y2, dx, dy, step;
 		int i;
 
@@ -114,6 +118,7 @@ int				main(int argc, char **argv)
 			y += dy;
 			++i;
 		}
+*/
 		mlx_key_hook(window, close, 0); // exit program
 		mlx_loop(mlx);
 	}

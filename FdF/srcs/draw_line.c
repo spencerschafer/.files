@@ -1,33 +1,29 @@
-void	draw_line(int x0, int y0, int x1, int y1, int z)
+#include <math.h>
+#include <stdlib.h>
+#include "fdf.h"
+#include <mlx.h>
+
+void	draw_line(void *mlx, void *window, int x0, int y0, int z0, int x1, int y1, int z1)
 {
 	//TODO
-	int x0;
-	int y0;
-
-	int x1;
-	int y1;
-
-	// start point
-	x0 = 0;
-	y0 = 0;
-
-	// end point
-	x1 = #;
-	y1 = #;
-
-
 	int dx;
 	int dy;
+	int step;
+	int absolute_dx;
+	int absolute_dy;
 
 	// determining delta values (gradients)
 	dx = x1 - x0;
 	dy = y1 - y0;
+	
+	absolute_dx = abs(dx);
+	absolute_dy = abs(dy);
+		
 
-
-	if (absolute_value(dx)> absolute_value(dy))
-		step = absolute_value(dx);
+	if (absolute_dx > absolute_dy)
+		step = absolute_dx;
 	else
-		step = absolute_value(dy);
+		step = absolute_dy;
 
 
 	int x_increment;
@@ -38,11 +34,12 @@ void	draw_line(int x0, int y0, int x1, int y1, int z)
 
 
 	int counter;
-	while (counter  < step)
+	counter = 0;
+	while (counter  < step + 100)
 	{
-		x += x_increment;
-		y += y_increment;
-		mlx_pixel_put(round(x), round(y));
+		x0 += x_increment;
+		y0 += y_increment;
+		mlx_pixel_put(mlx, window, 626 - round(x0), 375 - round(y0), 0xFFFFFF);
 		++counter;
 	}
 }

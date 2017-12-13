@@ -24,8 +24,9 @@ void	find_dimensions(char ***matrix, int *x, int *y)
 }
 
 
-void	parse_matrix(char ***matrix)
+void	parse_matrix(void *mlx, void *window, char ***matrix)
 {
+	int i = 0;
 	//max values
 	int x_max;
 	int y_max;
@@ -63,7 +64,8 @@ void	parse_matrix(char ***matrix)
 			z_start = ft_atoi(matrix[y_start][x_start]);
 			z_end = ft_atoi(matrix[y_end][x_end]);
 
-			draw_line(x_start, y_start, z_start, x_end, y_end, z_end);
+			draw_line(mlx, window, x_start, y_start, z_start, x_end, y_end, z_end);
+			++i;
 
 			++x_start;
 			++x_end;
@@ -75,17 +77,19 @@ void	parse_matrix(char ***matrix)
 		y_end = y_start + 1;
 		//TODO: can remove +1 and increment counter in loop conditional
 		//i.e. while (++x_end < x_max)
-		while (x_end < x_max)
+		while (x_end < x_max && y_end < y_max)
 		{
 			//TODO: see if y_value is necessary here as it remains the same throughout loop
 			z_start = ft_atoi(matrix[y_start][x_start]);
 			z_end = ft_atoi(matrix[y_end][x_end]);
 
-			draw_line(x_start, y_start, z_start, x_end, y_end, z_end);
+			draw_line(mlx, window, x_start, y_start, z_start, x_end, y_end, z_end);
+			++i;
 
 			++x_start;
 			++x_end;
 		}
 		++y_start;
 	}
+	printf("Lines Drawn: [%d]\n", i);
 }

@@ -7,14 +7,20 @@ OBJ1=$(SRC:.c=.o)
 OBJ=$(OBJ1:.m=.o)
 CFLAGS+=-O2
 
+GR = \033[1;32m # green
+LB = \033[1;34m # light blue
+NC = \033[0m   # no Color
+
 all: $(NOM)
 
 $(NOM):	$(OBJ)
-	ar -r $(NOM) $(OBJ)
-	ranlib $(NOM)
+	@ar -rc $(NOM) $(OBJ)
+	@ranlib $(NOM)
+	@echo "Completed $(GR)[MiniLibX build]$(NC)"
 
 clean:
-	rm -f $(NOM) $(OBJ) *~
-	rm -f mlx_app
+	@rm -f $(NOM) $(OBJ) *~
+	@rm -f mlx_app
+	@echo "Completed $(LB)[MiniLibX clean]$(NC)"
 
 re: clean all
