@@ -55,6 +55,23 @@ int				main(int argc, char **argv)
 
 		matrix = read_file(matrix, argv[1]);
 
+        //printing matrix
+        int xx;
+        int yy;
+
+        yy = 0;
+        while (matrix[yy])
+        {
+            xx = 0;
+            printf("[");
+            while (matrix[yy][xx])
+            {
+                printf("[%s]", matrix[yy][xx++]);
+            }
+            printf("]\n");
+            ++yy;
+        }
+
 		//opening window
 		win_x = 0;
 		win_y = 0;
@@ -64,7 +81,7 @@ int				main(int argc, char **argv)
 		win_y *= 14;
 		mlx = mlx_init();
 
-		window = mlx_new_window(mlx, win_x, win_y, "FdF");
+		window = mlx_new_window(mlx, 1250, 750, "FdF");
 		//window = mlx_new_window(mlx, x * 28, y * 50, "FdF");
 
 		float x, y, x1, y1, x2, y2, dx, dy, step;

@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	FdF
+NAME =	fdf
 INCL_FDF = -I ../includes
 INCL_LIBFT = -I ../libft/includes -L ../libft -lft
 INCL_MLX = -I includes -I mlx -L mlx -lmlx -framework OpenGL -framework AppKit
