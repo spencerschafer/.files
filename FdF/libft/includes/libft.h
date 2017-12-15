@@ -45,6 +45,7 @@ int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_countwords(char const *s, char delimiter);
 int					ft_wordlen(char const *s, char delimiter);
 int					ft_pow(int number, int power);
+int					ft_abs(int n);
 
 /*
 **	size_t

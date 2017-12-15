@@ -35,7 +35,7 @@ SRCS =	ft_isprint.c	ft_memset.c			ft_strcat.c		\
 		ft_strmapi.c	ft_strdup.c			ft_putstr.c		\
 		ft_memmove.c	ft_pow.c 			ft_strrev.c		\
 		ft_lstmap.c		ft_skipspace.c 		ft_arrayrev.c	\
-		ft_get_line.c
+		ft_abs.c		ft_get_line.c
 
 OBJS =	$(SRCS:c=o)
 
