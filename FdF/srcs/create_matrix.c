@@ -29,6 +29,8 @@ char ***create_matrix(char ***src, char *str)
 	char 	***matrix;
 
 	y = 0;
+	//counting y value of matrix to be malloc'd
+	//TODO: if src is equal to NULL return error
 	if (src != NULL)
 	{
 		while (src[y])
@@ -36,6 +38,7 @@ char ***create_matrix(char ***src, char *str)
 	}
 	matrix = (char ***)malloc(sizeof(char **) * (y + 2));
 
+	//if there are y values to be malloc'd
 	if (y > 0)
 	{
 		//copying exisiting values
@@ -69,6 +72,7 @@ char ***create_matrix(char ***src, char *str)
 	}
 	else
 	{
+		//TODO: check line is not empty
 		matrix[y++] = ft_strsplit(str, ' ');
 		matrix[y] = NULL;
 	}
