@@ -44,7 +44,10 @@ int		ft_check_line(t_point ****tab, int i)
 int		ft_check_map(t_point ****tab)
 {
 	if (ft_check_line(tab, 0) != 0)
-		ft_code_erreur(4);
+	{
+		//prints "Invalid map\n"
+		ft_code_erreur(4); // FILE: see below
+	}
 	else
 		ft_fdf(tab);
 	return (0);
