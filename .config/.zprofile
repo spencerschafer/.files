@@ -1,8 +1,9 @@
 # Shortcuts
 export PS1="%F{green}%~%f>"
-export g="$HOME/.github/"
+export d="$HOME/.dotfiles/"
+export f="$HOME/.foundery/"
+export p="$HOME/.projects/"
 export fdf="$HOME/.github/FdF"
-alias fc='bash ~/.42FileChecker/42FileChecker.sh'
 
 # Compilation
 alias comp="gcc -Wall -Werror -Wextra"
@@ -10,15 +11,33 @@ alias compdb="comp -ggdb"
 alias val="valgrind --leak-check=full"
 alias norm="norminette"
 alias normall="find . -name \"*.[c|h]\" -exec norminette {} \;"
-alias cc="comp -Ilibft/includes libft/libft.a \\
-		-Isources/mlx -Lsources/mlx -lmlx \\
-		-framework OpenGL -framework AppKit main.c"
+alias cc="gcc -Wall -Werror -Wextra -Isrcs/mlx -Lsrcs/mlx -lmlx \\ 
+			-framework OpenGL -framework AppKit \\
+			-I libft/includes libft/libft.a"
+alias cc="gcc -Wall -Werror -Wextra -Isrcs/mlx -Lsrcs/mlx -lmlx -framework\\
+			OpenGL -framework AppKit -I libft/includes libft/libft.a  *.c"
+		
+# Docker
+alias dockerpsi="docker ps -a; echo ""; docker images -a"
+alias dockerclean="docker stop \$(docker ps -aq); docker system prune -a"
+
+# Kubernetes
+alias k="kubectl "
+alias km="kubectl -n messaging"
+alias startmk="minikube start --vm-driver hyperkit && eval \$(minikube docker-env)"
+alias stopmk="minikube stop"
+alias evalmini="eval \$(minikube docker-env)"
+
+#brew
+alias brewclean="brew update && brew upgrade && brew cleanup &&\\
+					brew cask upgrade && brew cask cleanup && brew doctor"
+
 # Terminal
 alias ls="ls -FG"
 alias lsa="ls -a"
 alias lsl="ls -1"
 alias lsla="ls -1a"
-alias rez="source ~/.zprofile"
+alias resz="source ~/.zprofile"
 
 # Git
 alias ga="git add"
@@ -28,8 +47,9 @@ alias gc="git commit -m"
 alias gcl="git clone"
 alias gp="git push"
 
-# Loads Homebrew version until Sierra used - Note this is a temporary work around
-#export PATH=/usr/local/bin:$PATH
+#ENV
+alias settc=". ~/.dotfiles/.config/set-tc.sh"
+alias unsettc=". ~/.dotfiles/.config/unset-tc.sh"
 
 # Load Homebrew Fix script
 #source $HOME/.brew_fix.zsh
