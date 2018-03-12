@@ -1,9 +1,8 @@
 # Shortcuts
 export PS1="%F{green}%~%f>"
-export d="$HOME/.dotfiles/"
-export f="$HOME/.foundery/"
+export f="$HOME/.files/"
+export rmb="$HOME/.rmb/"
 export p="$HOME/.projects/"
-export fdf="$HOME/.github/FdF"
 
 # Compilation
 alias comp="gcc -Wall -Werror -Wextra"
@@ -48,8 +47,8 @@ alias gcl="git clone"
 alias gp="git push"
 
 #ENV
-alias settc=". ~/.dotfiles/.config/set-tc.sh"
-alias unsettc=". ~/.dotfiles/.config/unset-tc.sh"
+alias settc=". ~/.files/.config/set-tc.sh"
+alias unsettc=". ~/.files/.config/unset-tc.sh"
 
 # Load Homebrew Fix script
 #source $HOME/.brew_fix.zsh
