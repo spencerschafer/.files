@@ -1,5 +1,5 @@
 # Shortcuts
-export PS1="%F{green}%~%f>"
+export PS1="%F{cyan}%~%f>"
 export f="$HOME/.files/"
 export rmb="$HOME/.rmb/"
 export p="$HOME/.projects/"
@@ -25,7 +25,10 @@ alias k="kubectl "
 alias km="kubectl -n messaging"
 alias startmk="minikube start --vm-driver hyperkit && eval \$(minikube docker-env)"
 alias stopmk="minikube stop"
-alias evalmini="eval \$(minikube docker-env)"
+alias setmini="eval \$(minikube docker-env)"
+alias unsetmini="eval \$(minikube docker-env -u)"
+alias kcontext="k config current-context"
+alias startws="kubectl port-forward -n weave \"\$(kubectl get -n weave pod --selector=weave-scope-component=app -o jsonpath='{.items..metadata.name}')\" 4040"
 
 #brew
 alias brewclean="brew update && brew upgrade && brew cleanup &&\\
@@ -36,7 +39,7 @@ alias ls="ls -FG"
 alias lsa="ls -a"
 alias lsl="ls -1"
 alias lsla="ls -1a"
-alias resz="source ~/.zprofile"
+alias srcz="source ~/.zprofile"
 
 # Git
 alias ga="git add"
@@ -47,8 +50,10 @@ alias gcl="git clone"
 alias gp="git push"
 
 #ENV
-alias settc=". ~/.files/.config/set-tc.sh"
-alias unsettc=". ~/.files/.config/unset-tc.sh"
+alias settc=". ~/.files/.config/scripts/set-tc.sh"
+alias unsettc=". ~/.files/.config/scripts/unset-tc.sh"
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 # Load Homebrew Fix script
 #source $HOME/.brew_fix.zsh
