@@ -1,11 +1,16 @@
 # Shortcuts
-export PS1="%F{cyan}%~%f>"
+#export PS1=$'\e[0;36m%1d ->\e[0m'
+export PS1=$'\e[0;36m%~ ->\e[0m'
 export f="$HOME/.files/"
 export rmb="$HOME/.rmb/"
 export p="$HOME/.projects/"
+export zp="$HOME/.zprofile"
+export bi="$HOME/.bin/"
+export PATH="$PATH:/Users/Spencer/.bin"
 
 # Compilation
-alias comp="gcc -Wall -Werror -Wextra"
+alias compg="gcc -Wall -Werror -Wextra"
+alias compc="clang++ -Wall -Werror -Wextra"
 alias compdb="comp -ggdb"
 alias val="valgrind --leak-check=full"
 alias norm="norminette"
@@ -15,6 +20,8 @@ alias cc="gcc -Wall -Werror -Wextra -Isrcs/mlx -Lsrcs/mlx -lmlx \\
 			-I libft/includes libft/libft.a"
 alias cc="gcc -Wall -Werror -Wextra -Isrcs/mlx -Lsrcs/mlx -lmlx -framework\\
 			OpenGL -framework AppKit -I libft/includes libft/libft.a  *.c"
+alias delk="k delete clusterrolebindings service-reader-default && \\
+			k delete clusterrolebindings service-reader-k8s"
 		
 # Docker
 alias dockerpsi="docker ps -a; echo ""; docker images -a"
@@ -29,10 +36,12 @@ alias setmini="eval \$(minikube docker-env)"
 alias unsetmini="eval \$(minikube docker-env -u)"
 alias kcontext="k config current-context"
 alias startws="kubectl port-forward -n weave \"\$(kubectl get -n weave pod --selector=weave-scope-component=app -o jsonpath='{.items..metadata.name}')\" 4040"
-
+alias startmp="kubectl port-forward -n marketplace-dev \"\$(kubectl get -n marketplace-dev pod --selector=app=zero-coupon-deposit,component=database -o jsonpath='{.items..metadata.name}')\" 5433"
+alias startnr"kubectl port-forward -n messaging \"\$(kubectl get -n messaging pod --selector=app=node-red-app -o jsonpath='{.items..metadata.name}')\" 1880"
+alias startds="kubectl port-forward -n messaging \"\$(kubectl get -n messaging pod --selector=app=data-science-db,component=database -o jsonpath='{.items..metadata.name}')\" 5432"
 #brew
 alias brewclean="brew update && brew upgrade && brew cleanup &&\\
-					brew cask upgrade && brew cask cleanup && brew doctor"
+				 brew cask upgrade && brew cask cleanup && brew doctor"
 
 # Terminal
 alias ls="ls -FG"
@@ -40,6 +49,7 @@ alias lsa="ls -a"
 alias lsl="ls -1"
 alias lsla="ls -1a"
 alias srcz="source ~/.zprofile"
+#printing the 4th line of stdouti: ls -la | sed -n 4p
 
 # Git
 alias ga="git add"
@@ -57,3 +67,8 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Homebrew Fix script
 #source $HOME/.brew_fix.zsh
+
+#kubectl completion script
+#if [ $commands[kubectl] ]; then
+#  source <(kubectl completion zsh)
+#fi
