@@ -1,11 +1,12 @@
 # Shortcuts
 #export PS1=$'\e[0;36m%1d ->\e[0m'
-export PS1=$'\e[0;36m%~ ->\e[0m'
+#export PS1=$'\e[0;36m%~ ->\e[0m'
+export PS1=$'\e[0;36m->\e[0m'
 export f="$HOME/.files/"
 export rmb="$HOME/.rmb/"
 export p="$HOME/.projects/"
 export zp="$HOME/.zprofile"
-export bi="$HOME/.bin/"
+export bin="$HOME/.bin/"
 export PATH="$PATH:/Users/Spencer/.bin"
 
 # Compilation
@@ -67,8 +68,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Homebrew Fix script
 #source $HOME/.brew_fix.zsh
-
-#kubectl completion script
-#if [ $commands[kubectl] ]; then
-#  source <(kubectl completion zsh)
-#fi
