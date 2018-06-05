@@ -1,5 +1,5 @@
 set number
-set relativenumber
+"set relativenumber
 set backspace=indent,eol,start
 set ruler
 set tabstop=4
