@@ -1,3 +1,3 @@
-# Current project.
+# Configuration Files.
 
-Contains config file and current project.
+Basic zprofile/vimrc
