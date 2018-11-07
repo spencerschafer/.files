@@ -1,7 +1,8 @@
 # Shortcuts
 #export PS1=$'\e[0;36m%1d ->\e[0m'
 #export PS1=$'\e[0;36m%~ ->\e[0m'
-export PS1=$'\e[0;36m->\e[0m'
+#export PS1=$'\e[0;36m->\e[0m' #old
+export PS1="\[\e[01;32m\]->\[\e[0m\]" #new
 export f="$HOME/.files/"
 export rmb="$HOME/.rmb/"
 export p="$HOME/.projects/"
