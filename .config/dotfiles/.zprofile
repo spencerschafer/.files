@@ -1,14 +1,16 @@
 # Shortcuts
-#export PS1=$'\e[0;36m%1d ->\e[0m'
-#export PS1=$'\e[0;36m%~ ->\e[0m'
-#export PS1=$'\e[0;36m->\e[0m' #old
-export PS1="\[\e[01;32m\]->\[\e[0m\]" #new
+#export PS1="\[\e[01;32m\]->\[\e[0m\]" #bash
+export PS1=$'\e[0;32m->\e[0m' #zsh
 export f="$HOME/.files/"
 export rmb="$HOME/.rmb/"
 export p="$HOME/.projects/"
 export zp="$HOME/.zprofile"
-export bin="$HOME/.bin/"
-export PATH="$PATH:/Users/Spencer/.bin"
+#export bin="$HOME/.bin/"
+#export PATH="$PATH:/Users/Spencer/.bin"
+#CocoaPods
+export GEM_HOME=$HOME/.gem
+#export PATH=$GEM_HOME/bin:$PATH
+export PATH=/goinfre/sschafer/.gem/ruby/2.3.0/bin:$PATH
 
 # Compilation
 alias compg="gcc -Wall -Werror -Wextra"
@@ -69,3 +71,4 @@ alias unsettc=". ~/.files/.config/scripts/unset-tc.sh"
 
 # Load Homebrew Fix script
 #source $HOME/.brew_fix.zsh
+
