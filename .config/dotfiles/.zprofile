@@ -5,8 +5,7 @@ export f="$HOME/.files/"
 export rmb="$HOME/.rmb/"
 export p="$HOME/.projects/"
 export zp="$HOME/.zprofile"
-#export bin="$HOME/.bin/"
-#export PATH="$PATH:/Users/Spencer/.bin"
+#
 #CocoaPods
 export GEM_HOME=$HOME/.gem
 #export PATH=$GEM_HOME/bin:$PATH
@@ -66,9 +65,3 @@ alias gp="git push"
 #ENV
 alias settc=". ~/.files/.config/scripts/set-tc.sh"
 alias unsettc=". ~/.files/.config/scripts/unset-tc.sh"
-#export NVM_DIR="$HOME/.nvm"
-#. "/usr/local/opt/nvm/nvm.sh"
-
-# Load Homebrew Fix script
-#source $HOME/.brew_fix.zsh
-
