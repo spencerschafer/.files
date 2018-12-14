@@ -1,14 +1,3 @@
-" File:       monokai.vim
-" Maintainer: Crusoe Xia (crusoexia)
-" URL:        https://github.com/crusoexia/vim-monokai
-" License:    MIT
-"
-" The colour palette is from http://www.colourlovers.com/
-" The original code is from https://github.com/w0ng/vim-hybrid
-
-" Initialisation
-" --------------
-
 if !has("gui_running") && &t_Co < 256
   finish
 endif
@@ -69,16 +58,15 @@ endfunction
 " Palettes
 " --------
 
-
 let s:white       = { "gui": "#E8E8E3", "cterm": "252" }
-let s:black       = { "gui": "#272822", "cterm": "234" }
-let s:lightblack  = { "gui": "#2D2E27", "cterm": "235" }
+let s:black       = { "gui": "#151515", "cterm": "234" }
+let s:lightblack  = { "gui": "#1E1E1E", "cterm": "235" }	"line number bg / 80 column bg
 let s:lightblack2 = { "gui": "#383a3e", "cterm": "236" }
 let s:darkblack   = { "gui": "#211F1C", "cterm": "233" }
-let s:grey        = { "gui": "#8F908A", "cterm": "243" }
-let s:lightgrey   = { "gui": "#575b61", "cterm": "237" }
-let s:darkgrey    = { "gui": "#64645e", "cterm": "239" }
-let s:warmgrey    = { "gui": "#75715E", "cterm": "59" }
+let s:grey        = { "gui": "#8F908A", "cterm": "243" }	"line number
+let s:lightgrey   = { "gui": "#151515", "cterm": "237" }	"line column tilde
+let s:darkgrey    = { "gui": "#151515", "cterm": "239" }
+let s:warmgrey    = { "gui": "#5E5E4E", "cterm": "59" }		"comments
 
 let s:pink        = { "gui": "#F92772", "cterm": "197" }
 let s:green       = { "gui": "#A6E22D", "cterm": "148" }

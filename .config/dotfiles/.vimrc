@@ -10,6 +10,8 @@ syntax on
 filetype plugin indent on
 colorscheme monokai
 
+set termguicolors
+
 "type :hi to see colours
 "ctermfg sets number colour
 "ctermbg sets background colour
