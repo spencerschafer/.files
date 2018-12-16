@@ -135,6 +135,8 @@ fi
 #Remap title buttons to default
 #gsettings set org.gnome.desktop.wm.preferences button-layout ':minimize,maximize,minimize'
 
+#Adding Date to topbar
+#gsettings set org.gnome.desktop.interface clock-show-date true
 
 #Spencer's settings that do not need to be run in terminal
 
@@ -147,3 +149,7 @@ export sf="$HOME/.files/social-tech/front-end"
 
 #Setting alias to source .bashrc
 alias sbrc="source $HOME/.bashrc"
+
+#Setting up Java
+export JAVA_HOME=/usr/local/jdk-11.0.1
+export PATH=$PATH:$JAVA_HOME/bin
