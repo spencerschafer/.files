@@ -1,3 +1,0 @@
-# NO GIT FOLDER IN HERE
-
-test
